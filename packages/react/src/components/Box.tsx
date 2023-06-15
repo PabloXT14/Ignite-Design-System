@@ -12,3 +12,5 @@ export const Box = styled('div', {
 export interface BoxProps extends ComponentProps<typeof Box> {
   as?: ElementType // propriedade do Stitches que permite tornar componente em outro tipo de elemento caso necessário (ela não é conhecida por padrão no ComponentProps)
 }
+
+Box.displayName = 'Box'

@@ -10,6 +10,13 @@ export default {
     src: 'https://github.com/pabloxt14.png',
     alt: 'User Avatar',
   },
+  argTypes: {
+    src: {
+      control: {
+        type: 'text',
+      },
+    },
+  },
 } as Meta<AvatarProps>
 
 export const Primary: StoryObj<AvatarProps> = {}

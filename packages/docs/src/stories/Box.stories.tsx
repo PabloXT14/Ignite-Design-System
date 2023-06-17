@@ -12,6 +12,13 @@ export default {
       </>
     ),
   },
+  argTypes: {
+    children: {
+      control: {
+        type: null, // para não ter a opção de escolher
+      },
+    },
+  },
 } as Meta<BoxProps>
 
 export const Primary: StoryObj<BoxProps> = {}

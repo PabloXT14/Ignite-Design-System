@@ -8,8 +8,30 @@ export default {
   tags: ['autodocs'],
   args: {
     children: 'Send',
+    // para o componente já vir com um valor padrão em suas props/args
+    variant: 'primary',
+    size: 'md',
+    disabled: false,
   },
   argTypes: {
+    // especificando controles de variações do componente
+    variant: {
+      options: ['primary', 'secondary', 'tertiary'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    size: {
+      options: ['sm', 'md'],
+      control: {
+        type: 'inline-radio',
+      },
+    },
+    disabled: {
+      control: {
+        type: 'boolean',
+      },
+    },
     onClick: {
       // especificando action de click padrão de um botão
       action: 'click',

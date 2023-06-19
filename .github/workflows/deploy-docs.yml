@@ -1,0 +1,29 @@
+name: Deploy docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # checkout para ver se esta tudo ok com o repositório
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      
+      - run: npm ci # para instalar os pacote do npm no ambiente de CI do github
+
+      - run: npm run build # nosso comando de build dos pacotes com o TurboRepo 
+
+      - name: Deploy storybook
+        working-directory: ./packages/docs
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        env: 
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}

@@ -17,6 +17,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+          cache: 'npm'
+          chace-dependency-path: '**/package-lock.json'
       
       - run: npm ci # para instalar os pacote do npm no ambiente de CI do github
 

@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { Avatar, AvatarProps } from '@ignite-ui/react'
+import { Avatar, AvatarProps } from '@pabloxt14-ignite-ui/react'
 
 export default {
   title: 'Data display/Avatar',

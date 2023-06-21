@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react'
-import { Heading, HeadingProps } from '@ignite-ui/react'
+import { Heading, HeadingProps } from '@pabloxt14-ignite-ui/react'
 
 export default {
   title: 'Typography/Heading',

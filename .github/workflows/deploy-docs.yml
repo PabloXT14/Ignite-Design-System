@@ -21,6 +21,9 @@ jobs:
       - run: npm ci # para instalar os pacote do npm no ambiente de CI do github
 
       - run: npm run build # nosso comando de build dos pacotes com o TurboRepo 
+        env:
+          TURBO_TOKEN: e6AWub7IevoqQ2EkHBeRDMV2
+          TURBO_TEAM: pabloxt14
 
       - name: Deploy storybook
         working-directory: ./packages/docs

@@ -28,7 +28,7 @@ export default {
 
 export const Primary: StoryObj<TextInputProps> = {
   args: {
-    placeholder: 'Type your name',
+    placeholder: 'Type your username',
   },
 }
 

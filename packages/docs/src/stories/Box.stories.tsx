@@ -8,7 +8,7 @@ export default {
   args: {
     children: (
       <>
-        <Text>Textando elemento Box</Text>
+        <Text>Testing box element</Text>
       </>
     ),
   },

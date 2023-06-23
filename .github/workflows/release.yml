@@ -15,6 +15,9 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
+      - name: Clean Changeset Cache
+        run: npx changeset cache clear
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:

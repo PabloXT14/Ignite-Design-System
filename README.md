@@ -9,3 +9,5 @@
 - [x] Checkbox
 - [x] Avatar
 - [x] MultiStep (indicador de etapas de preenchimento de algo, ex: formulário)
+- [] Toast
+- [] Tooltip

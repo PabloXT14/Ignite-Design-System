@@ -23,7 +23,7 @@ export const Button = styled('button', {
     cursor: 'not-allowed',
   },
 
-  '&:hover': {
+  '&:focus': {
     boxShadow: '0 0 0 2px $colors$gray100',
   },
 

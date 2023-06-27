@@ -257,7 +257,7 @@ var Button = styled("button", {
   "&:disabled": {
     cursor: "not-allowed"
   },
-  "&:hover": {
+  "&:focus": {
     boxShadow: "0 0 0 2px $colors$gray100"
   },
   svg: {
@@ -516,6 +516,137 @@ function MultiStep({ size, currentStep = 1 }) {
   ] });
 }
 MultiStep.displayName = "MultiStep";
+
+// src/components/Toast/index.tsx
+import * as ToastPrimitive2 from "@radix-ui/react-toast";
+import { X } from "phosphor-react";
+
+// src/components/Toast/styles.ts
+import * as ToastPrimitive from "@radix-ui/react-toast";
+var VIEWPORT_PADDING = 32;
+var hide = keyframes({
+  "0%": { opacity: 1 },
+  "100%": { opacity: 0 }
+});
+var slideIn2 = keyframes({
+  from: { transform: `translateX(calc(100% + ${VIEWPORT_PADDING}px))` },
+  to: { transform: "translateX(0)" }
+});
+var swipeOut = keyframes({
+  from: { transform: "translateX(var(--radix-toast-swipe-end-x))" },
+  to: { transform: `translateX(calc(100% + ${VIEWPORT_PADDING}px))` }
+});
+var ToastRoot = styled(ToastPrimitive.Root, {
+  padding: "$3 $5",
+  backgroundColor: "$gray800",
+  border: "1px solid $gray600",
+  borderRadius: "$md",
+  fontFamily: "$default",
+  position: "relative",
+  "@media (prefers-reduced-motion: no-preference)": {
+    '&[data-state="open"]': {
+      animation: `${slideIn2} 150ms cubic-bezier(0.16, 1, 0.3, 1)`
+    },
+    '&[data-state="closed"]': {
+      animation: `${hide} 100ms ease-in`
+    },
+    '&[data-swipe="move"]': {
+      transform: "translateX(var(--radix-toast-swipe-move-x))"
+    },
+    '&[data-swipe="cancel"]': {
+      transform: "translateX(0)",
+      transition: "transform 200ms ease-out"
+    },
+    '&[data-swipe="end"]': {
+      animation: `${swipeOut} 100ms ease-out`
+    }
+  }
+});
+var ToastTitle = styled(ToastPrimitive.Title, {
+  color: "$white",
+  fontWeight: "$bold",
+  fontSize: "$xl",
+  lineHeight: "$base"
+});
+var ToastDescription = styled(ToastPrimitive.Description, {
+  color: "$gray200",
+  fontSize: "$sm",
+  lineHeight: "$base",
+  marginTop: "$1"
+});
+var ToastClose = styled(ToastPrimitive.Close, {
+  position: "absolute",
+  top: "$4",
+  right: "$4",
+  background: "none",
+  border: "none",
+  color: "$gray200",
+  cursor: "pointer"
+});
+var ToastViewport = styled(ToastPrimitive.Viewport, {
+  position: "fixed",
+  bottom: 0,
+  right: 0,
+  display: "flex",
+  flexDirection: "column",
+  padding: VIEWPORT_PADDING,
+  gap: 10,
+  width: 360,
+  maxWidth: "100vw",
+  margin: 0,
+  listStyle: "none",
+  zIndex: 9999999,
+  outline: "none"
+});
+
+// src/components/Toast/index.tsx
+import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
+function Toast(_a) {
+  var _b = _a, { title, description } = _b, props = __objRest(_b, ["title", "description"]);
+  return /* @__PURE__ */ jsxs4(ToastPrimitive2.Provider, { swipeDirection: "right", children: [
+    /* @__PURE__ */ jsxs4(ToastRoot, __spreadProps(__spreadValues({}, props), { children: [
+      /* @__PURE__ */ jsx5(ToastTitle, { children: title }),
+      description && /* @__PURE__ */ jsx5(ToastDescription, { children: description }),
+      /* @__PURE__ */ jsx5(ToastClose, { children: /* @__PURE__ */ jsx5(X, { weight: "light", size: 20 }) })
+    ] })),
+    /* @__PURE__ */ jsx5(ToastViewport, {})
+  ] });
+}
+Toast.displayName = "Toast";
+
+// src/components/Tooltip/index.tsx
+import * as TooltipPrimitive2 from "@radix-ui/react-tooltip";
+
+// src/components/Tooltip/styles.ts
+import * as TooltipPrimitive from "@radix-ui/react-tooltip";
+var TooltipContent = styled(TooltipPrimitive.Content, {
+  fontFamily: "$default",
+  fontSize: "$sm",
+  fontWeight: "$medium",
+  lineHeight: "$short",
+  backgroundColor: "$gray900",
+  color: "$gray100",
+  padding: "$3 $4",
+  borderRadius: "$sm",
+  filter: "drop-shadow(4px 16px 24px rgba(0, 0, 0, 0.25))"
+});
+var TooltipArrow = styled(TooltipPrimitive.Arrow, {
+  fill: "$gray900"
+});
+
+// src/components/Tooltip/index.tsx
+import { jsx as jsx6, jsxs as jsxs5 } from "react/jsx-runtime";
+function Tooltip(_a) {
+  var _b = _a, { content, children } = _b, props = __objRest(_b, ["content", "children"]);
+  return /* @__PURE__ */ jsx6(TooltipPrimitive2.Provider, { children: /* @__PURE__ */ jsxs5(TooltipPrimitive2.Root, __spreadProps(__spreadValues({}, props), { children: [
+    /* @__PURE__ */ jsx6(TooltipPrimitive2.Trigger, { asChild: true, children }),
+    /* @__PURE__ */ jsx6(TooltipPrimitive2.Portal, { children: /* @__PURE__ */ jsxs5(TooltipContent, { children: [
+      /* @__PURE__ */ jsx6(TooltipArrow, {}),
+      content
+    ] }) })
+  ] })) });
+}
+Tooltip.displayName = "Tooltip";
 export {
   Avatar2 as Avatar,
   Box,
@@ -526,6 +657,8 @@ export {
   Text,
   TextArea,
   TextInput,
+  Toast,
+  Tooltip,
   config,
   createTheme,
   css,

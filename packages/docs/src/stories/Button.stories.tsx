@@ -39,6 +39,7 @@ export default {
   },
 } as Meta<ButtonProps>
 
+/** Primary UI component for user interaction */
 export const Primary: StoryObj<ButtonProps> = {}
 
 export const Secondary: StoryObj<ButtonProps> = {

@@ -1,10 +1,12 @@
 import * as _stitches_react_types_styled_component from '@stitches/react/types/styled-component';
 import * as _stitches_react_types_css_util from '@stitches/react/types/css-util';
 import * as react from 'react';
-import { ComponentProps, ElementType } from 'react';
+import { ComponentProps, ElementType, ReactNode } from 'react';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import * as Avatar$1 from '@radix-ui/react-avatar';
 import * as Checkbox$1 from '@radix-ui/react-checkbox';
+import * as ToastPrimitive from '@radix-ui/react-toast';
+import * as TooltipPrimitive from '@radix-ui/react-tooltip';
 import * as _stitches_react_types_theme from '@stitches/react/types/theme';
 import * as _stitches_react_types_css from '@stitches/react/types/css';
 import * as _stitches_react_types_stitches from '@stitches/react/types/stitches';
@@ -1688,6 +1690,23 @@ interface MultiStepProps {
 }
 declare function MultiStep({ size, currentStep }: MultiStepProps): react_jsx_runtime.JSX.Element;
 declare namespace MultiStep {
+    var displayName: string;
+}
+
+interface ToastProps extends ComponentProps<typeof ToastPrimitive.Root> {
+    title: string;
+    description?: string;
+}
+declare function Toast({ title, description, ...props }: ToastProps): react_jsx_runtime.JSX.Element;
+declare namespace Toast {
+    var displayName: string;
+}
+
+interface TooltipProps extends ComponentProps<typeof TooltipPrimitive.Root> {
+    content: string | ReactNode;
+}
+declare function Tooltip({ content, children, ...props }: TooltipProps): react_jsx_runtime.JSX.Element;
+declare namespace Tooltip {
     var displayName: string;
 }
 
@@ -3393,4 +3412,4 @@ declare const config: {
     utils: {};
 };
 
-export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps, config, createTheme, css, getCssText, globalCss, keyframes, styled, theme };
+export { Avatar, AvatarProps, Box, BoxProps, Button, ButtonProps, Checkbox, CheckboxProps, Heading, HeadingProps, MultiStep, MultiStepProps, Text, TextArea, TextAreaProps, TextInput, TextInputProps, TextProps, Toast, ToastProps, Tooltip, TooltipProps, config, createTheme, css, getCssText, globalCss, keyframes, styled, theme };

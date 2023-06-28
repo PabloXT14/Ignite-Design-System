@@ -603,7 +603,7 @@ var ToastViewport = styled(ToastPrimitive.Viewport, {
 import { jsx as jsx5, jsxs as jsxs4 } from "react/jsx-runtime";
 function Toast(_a) {
   var _b = _a, { title, description } = _b, props = __objRest(_b, ["title", "description"]);
-  return /* @__PURE__ */ jsxs4(ToastPrimitive2.Provider, { swipeDirection: "right", children: [
+  return /* @__PURE__ */ jsxs4(ToastPrimitive2.Provider, { children: [
     /* @__PURE__ */ jsxs4(ToastRoot, __spreadProps(__spreadValues({}, props), { children: [
       /* @__PURE__ */ jsx5(ToastTitle, { children: title }),
       description && /* @__PURE__ */ jsx5(ToastDescription, { children: description }),

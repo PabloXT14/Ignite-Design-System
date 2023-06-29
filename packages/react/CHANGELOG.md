@@ -1,5 +1,11 @@
 # @pabloxt14-ignite-ui/react
 
+## 3.0.1
+
+### Patch Changes
+
+- Add README to tokens and react packages
+
 ## 3.0.0
 
 ### Major Changes

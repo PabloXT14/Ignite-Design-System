@@ -54,7 +54,13 @@ Vale ressaltar que este projeto foi desenvolvido como conclusão de um desafio p
 
 ## 🔗 Deploy
 
+**Documentação Storybook**:
+
 A Documentação do Design System pode ser acessada através da seguinte URL base: https://pabloxt14.github.io/Ignite-Design-System/
+
+**Pacotes no NPM**:
+- [@pabloxt14-ignite-ui/tokens](https://www.npmjs.com/package/@pabloxt14-ignite-ui/tokens)
+- [@pabloxt14-ignite-ui/react](https://www.npmjs.com/package/@pabloxt14-ignite-ui/react)
 
 ---
 

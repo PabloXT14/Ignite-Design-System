@@ -11,6 +11,8 @@
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/pabloxt14/Ignite-Design-System">
 
+  <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/pabloxt14/Ignite-Design-System" />
+
   <img alt="Repository size" src="https://img.shields.io/github/repo-size/pabloxt14/Ignite-Design-System">
   
   <a href="https://github.com/pabloxt14/Ignite-Design-System/commits/master">
@@ -153,7 +155,7 @@ As seguintes principais ferramentas foram usadas na construção do projeto:
 - **[Turborepo](https://turbo.build/repo)**
 - **[Changeset](https://github.com/changesets/changesets)**
 
-> Para mais detalhes das dependências gerais da aplicação veja o arquivo [package.json](./package.json)
+> Para mais detalhes das dependências gerais da aplicação veja o arquivo [package.json](https://github.com/PabloXT14/Ignite-Design-System/blob/main/package.json)
 
 > Para mais detalhes das dependências individuais de cada um dos pacotes da aplicação, acesse o arquivo `package.json` de cada pacote respectivamente.
 

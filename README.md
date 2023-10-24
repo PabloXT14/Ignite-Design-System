@@ -155,7 +155,7 @@ As seguintes principais ferramentas foram usadas na construção do projeto:
 - **[Turborepo](https://turbo.build/repo)**
 - **[Changeset](https://github.com/changesets/changesets)**
 
-> Para mais detalhes das dependências gerais da aplicação veja o arquivo [package.json](https://github.com/PabloXT14/Ignite-Design-System/blob/main/package.json)
+> Para mais detalhes das dependências gerais da aplicação veja o arquivo [package.json](./package.json)
 
 > Para mais detalhes das dependências individuais de cada um dos pacotes da aplicação, acesse o arquivo `package.json` de cada pacote respectivamente.
 
